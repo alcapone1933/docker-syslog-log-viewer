@@ -19,7 +19,7 @@ https://github.com/greenweb-cloud/syslog-log-viewer
 ```bash
 # Docker Build  
 
-git clone https://github.com/alcapone1933/docker-syslog-log-viewer.git
+git clone https://github.com/alcapone1933/docker-syslog-log-viewer.git syslog-log-viewer
  
 cd syslog-log-viewer
  
