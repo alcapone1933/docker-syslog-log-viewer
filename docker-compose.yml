@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  syslog-log-viewer:
+    build:
+      dockerfile: ./Dockerfile
+    image: syslog-log-viewer:latest
+    # image: alcapone1933/syslog-log-viewer:latest
+    container_name: syslog-log-viewer
+    restart: always
+    stdin_open: true 
+    tty: true        
+    ports:
+      - 8080:80
+      - 514:514/udp
+    environment:
+      - TZ=Europe/Berlin
+      - SYSLOG_USERNAME=admin
+      - SYSLOG_PASSWORD=password
+    volumes:
+      - data:/var/log/net/
+      - config:/var/www/
+
+volumes:
+  data:
+    name: syslog_data
+  config:
+    name: syslog_config
