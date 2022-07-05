@@ -1,4 +1,4 @@
-FROM alcapone1933/ubuntu:21.04
+FROM alcapone1933/ubuntu:20.04
 LABEL maintainer="alcapone1933 alcapone1933@cosanostra-cloud.de"
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
