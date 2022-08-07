@@ -1,5 +1,5 @@
 # syslog-log-viewer
-[![syslog-log-viewer](/img/syslog-log-viewer.png)](https://www.pimpmylog.com/)
+[![syslog-log-viewer](/img/syslog-log-viewer_2560x1278.png)](https://www.pimpmylog.com/)
 
 Pimp my Log is a web app written in PHP. It displays server logs friendly.
 
