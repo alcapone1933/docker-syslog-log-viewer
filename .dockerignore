@@ -1,3 +1,5 @@
 .github
+img
+.drone.yml
 README.md
 docker-compose.yml
