@@ -14,6 +14,57 @@ https://github.com/greenweb-cloud/syslog-log-viewer
 
 # Installation 
 
+# Docker CLI
+
+```bash
+docker run -d -it \
+--name=syslog-log-viewer \
+--restart=always \
+-p 8080:80 \
+-p 1514:514/udp \
+-e TZ=Europe/Berlin \
+-e SYSLOG_USERNAME=admin \
+-e SYSLOG_PASSWORD=password \
+-v syslog_data:/var/log/net/ \
+-v syslog_config:/var/www/ \
+alcapone1933/syslog-log-viewer:latest
+
+# OR
+
+docker-compose up -d
+
+```
+
+# Docker Compose
+
+```yaml
+version: "3.9"
+services:
+  syslog-log-viewer:
+    image: alcapone1933/syslog-log-viewer:latest
+    container_name: syslog-log-viewer
+    restart: always
+    stdin_open: true 
+    tty: true        
+    ports:
+      - 8080:80
+      - 1514:514/udp
+    environment:
+      - TZ=Europe/Berlin
+      - SYSLOG_USERNAME=admin
+      - SYSLOG_PASSWORD=password
+    volumes:
+      - data:/var/log/net/
+      - config:/var/www/
+
+volumes:
+  data:
+    name: syslog_data
+  config:
+    name: syslog_config
+
+```
+
 ## Docker Build
 
 ```bash
@@ -33,59 +84,7 @@ docker build -t syslog-log-viewer https://github.com/alcapone1933/docker-syslog-
 Dockerhub: docker pull alcapone1933/syslog-log-viewer:latest
 ```
 
-# Docker CLI
 
-```bash
-docker run -d -it \
---name=syslog-log-viewer \
---restart=always \
--p 8080:80 \
--p 514:514/udp \
--e TZ=Europe/Berlin \
--e SYSLOG_USERNAME=admin \
--e SYSLOG_PASSWORD=password \
--v syslog_data:/var/log/net/ \
--v syslog_config:/var/www/ \
-syslog-log-viewer
-
-# OR
-
-docker-compose up -d
-
-```
-
-# Docker Compose
-
-```yaml
-version: "3.9"
-services:
-  syslog-log-viewer:
-    build:
-      dockerfile: ./Dockerfile
-    image: syslog-log-viewer:latest
-    # image: alcapone1933/syslog-log-viewer:latest
-    container_name: syslog-log-viewer
-    restart: always
-    stdin_open: true 
-    tty: true        
-    ports:
-      - 8080:80
-      - 514:514/udp
-    environment:
-      - TZ=Europe/Berlin
-      - SYSLOG_USERNAME=admin
-      - SYSLOG_PASSWORD=password
-    volumes:
-      - data:/var/log/net/
-      - config:/var/www/
-
-volumes:
-  data:
-    name: syslog_data
-  config:
-    name: syslog_config
-
-```
 * * *
 ## Volume params
 
