@@ -1,4 +1,9 @@
 # syslog-log-viewer
+[![Build Status](https://shields.cosanostra-cloud.de/drone/build/alcapone1933/docker-syslog-log-viewer?server=https%3A%2F%2Fdrone.docker-for-life.de)](https://drone.docker-for-life.de/alcapone1933/docker-syslog-log-viewer)
+[![Build Status Branch Master](https://shields.cosanostra-cloud.de/drone/build/alcapone1933/docker-syslog-log-viewer/master?label=build%20%5Bbrach%20master%5D&server=https%3A%2F%2Fdrone.docker-for-life.de)](https://drone.docker-for-life.de/alcapone1933/docker-syslog-log-viewer/branches)
+[![Docker Pulls](https://shields.cosanostra-cloud.de/docker/pulls/alcapone1933/syslog-log-viewer)](https://hub.docker.com/r/alcapone1933/syslog-log-viewer/tags)
+![Docker Image Version (latest semver)](https://shields.cosanostra-cloud.de/docker/v/alcapone1933/syslog-log-viewer?sort=semver)
+
 [![syslog-log-viewer](/img/syslog-log-viewer_2560x1278.png)](https://www.pimpmylog.com/)
 
 Pimp my Log is a web app written in PHP. It displays server logs friendly.
