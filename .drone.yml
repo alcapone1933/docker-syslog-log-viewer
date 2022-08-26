@@ -11,11 +11,15 @@ steps:
       repo: alcapone1933/syslog-log-viewer
       tags: latest
       dry_run: true
+
 trigger:
   branch:
   - master
   event:
   - custom
+  - push
+  - pull_request
+
 ---
 kind: pipeline
 type: docker
@@ -37,5 +41,8 @@ trigger:
   - master
   event:
   - custom
+  - push
+  - pull_request
+
 depends_on:
   - BUILD-TEST
