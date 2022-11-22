@@ -3,7 +3,7 @@ LABEL maintainer="alcapone1933 alcapone1933@cosanostra-cloud.de"
 ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && \
-    apt-get install -yqq git nginx rsyslog supervisor php7.4-fpm php7.4-cli apache2-utils && \
+    apt-get install -yqq git nginx rsyslog supervisor php7.4-fpm php7.4-cli php7.4-mbstring apache2-utils && \
     rm -rf /var/lib/apt/lists/*
 
 RUN sed -i '1idaemon off;' /etc/nginx/nginx.conf
